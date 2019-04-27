@@ -1,0 +1,231 @@
+body {
+    color: rgb(15, 15, 15);
+    font-family: Open Sans;
+    font-size: 12px;
+    position: relative;
+    height: 100vh;
+    font-weight: 400;
+    text-align: center;
+}
+
+#content {
+    display: grid;
+    /*grid-template-columns: 33.3% 33.3% 33.3%;*/
+    /* grid-template-columns: 1fr 2fr 1fr; /* fractions */
+    grid-template-columns: repeat(12, 1fr); /*how many columns you want and the fraction*/
+    /*grid-auto-rows: 200px; /*every row will have a fixed hieght and will cut off content inside*/
+    /*grid-auto-rows: minmax(200px, auto); /*min hieght of 200px, but if there is content in it, take the height of the content*/
+    /*grid-template-rows: 200px 300px 400px 200px;*/
+    /*grid-template-rows: repeat(3, minmax(200px, auto)); don't need row because of defalut behavior*/
+    grid-column-gap: 5px;
+    grid-row-gap:10px;
+    grid-template-rows: repeat(12, minmax(5px, auto));
+    max-width: 1080px;
+    margin: 0 auto;
+    position: relative;
+
+}
+
+#content div{
+    padding: 40px;
+
+}
+
+/*#content div:nth-child(even){
+    background: #3fe3e9;
+}*/
+
+.one {
+    /*grid-column-start: 1;
+    grid-column-end: 3;*/
+    grid-column: 1 / 13;
+    grid-row: 1 / 3;
+    display: grid;
+    row-gap: 2px;
+
+
+}
+
+.one p{
+    margin: 0;
+
+    border: 1px solid gray;
+    grid-template-rows: 20px 20px;
+    align-self: start;
+}
+
+
+
+.two {
+    grid-column: 1 / 13;
+    grid-row: 12 / 13;
+}
+
+.three {
+
+    grid-column: 1 / 7;
+    grid-row: 3 / 12;
+    display: inline-block;
+    grid-template-columns: 1fr;
+    margin: 0;
+
+
+}
+
+.nav {
+  height: .02px;
+  display: flex;
+  position: relative;
+}
+
+#content .three p{
+    font-size: 18px;
+    font-family: sans-serif;
+    border: 1px solid gray;
+    background: rgb(236, 236, 236);
+    text-align: start;
+    padding-left: 15px;
+  
+    margin-bottom: -15px;
+    max-width: 400px;
+    width: fit-content;
+
+}
+
+.four {
+    /*display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 5px;
+    grid-column: span 2;*/
+    grid-column: 7/ 13;
+    grid-row: 3 / 12;
+}
+
+.four p{
+    border: 1px solid #454545;
+    padding: 10px;
+    margin: 0;
+}
+
+#content #grid {
+    display: grid;
+    position: absolute;
+    top: 0;
+    left: 0;
+    grid-template-columns: repeat(12, 1fr);
+    grid-auto-rows: minmax(100%, auto);
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    padding: 0;
+    display: none;
+}
+
+/*#grid p{
+    border: 1px solid;
+    background: rgb(97, 97, 97);
+    margin: 0;
+    opacity: 0.7;
+}
+
+input:checked + #content #grid {
+    display: grid;
+}*/
+
+ul {list-style-type: none;}
+body {font-family: Verdana, sans-serif;}
+
+/* Month header -- usinge W3school as reference */
+#content .month {
+
+  background: #2b2f2f;
+  text-align: center;
+}
+
+/* Month list */
+#content .month ul {
+  margin: 0;
+  padding: 0;
+}
+
+.month ul li {
+  color: white;
+  font-size: 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+
+
+.month .p {
+  float: left;
+  padding-top: 10px;
+}
+
+.month .n {
+  float: right;
+  padding-top: 10px;
+}
+
+.weekdays {
+  margin: 0;
+  padding: 15px 0;
+  background-color:#ddd;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.weekdays li {
+  color: #666;
+  width: auto;
+  text-align: center;
+}
+
+.days {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  background: #eee;
+  justify-self: start;
+  padding: 15px 0;
+  margin: 0;
+}
+
+.days li {
+  text-align: center;
+  margin-bottom: 10px;
+  font-size:12px;
+  color: #777;
+}
+
+.active {
+  padding: 5px;
+  background: #5f6160;
+  color: white;
+}
+
+.hidden {
+  visibility: hidden;
+  position: absolute;
+}
+
+#clock, #current-date {
+  position: absolute;
+  Left: 0;
+  Right: 0;
+  border: none;
+  font-size: 20px;
+  color: rgb(0, 0, 0);
+  top: 20px;
+
+}
+
+#current-schedule, #next-schedule {
+  border: none;
+}
+
+button {
+  float: right;
+}
+
+#add-sch-button {
+  float: none;
+}
